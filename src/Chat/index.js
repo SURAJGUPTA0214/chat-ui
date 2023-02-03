@@ -43,7 +43,7 @@ const Chat = () => {
 
   useEffect(() => {
     searchChat();
-  }, [searchData]);
+  }, [searchData, searchChat]);
 
   const searchChat = async () => {
     const token = localStorage.getItem("chatAppToken");
@@ -104,7 +104,7 @@ const Chat = () => {
   useEffect(() => {
     getOldMessage();
     selectChatCompare = selectChat;
-  }, [selectChat]);
+  }, [selectChat, getOldMessage]);
 
   const getOldMessage = async () => {
     const token = localStorage.getItem("chatAppToken");
