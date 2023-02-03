@@ -40,6 +40,7 @@ const RightSideChat = ({ messages, handleSubmit, typings, isTyping }) => {
   const onFinish = async (values) => {
     console.log("values", values);
     handleSubmit(values);
+    form.resetFields()
   };
 
   let senderId = JSON.parse(localStorage.getItem("userInfo"));
@@ -128,7 +129,7 @@ const RightSideChat = ({ messages, handleSubmit, typings, isTyping }) => {
 
   const chatContentFooter = () => (
     <div className="chat-content-footer">
-      <Form onFinish={onFinish} name="msgInput" className="w-100">
+      <Form form={form} onFinish={onFinish} name="msgInput" className="w-100">
         {isTyping && (
           <Lottie
             options={defaultOptions}
