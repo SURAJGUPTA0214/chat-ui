@@ -43,7 +43,7 @@ const Chat = () => {
 
   useEffect(() => {
     searchChat();
-  }, [searchData, searchChat]);
+  }, [searchData]); //eslint-disable-line
 
   const searchChat = async () => {
     const token = localStorage.getItem("chatAppToken");
@@ -104,7 +104,7 @@ const Chat = () => {
   useEffect(() => {
     getOldMessage();
     selectChatCompare = selectChat;
-  }, [selectChat, getOldMessage]);
+  }, [selectChat]); //eslint-disable-line
 
   const getOldMessage = async () => {
     const token = localStorage.getItem("chatAppToken");
