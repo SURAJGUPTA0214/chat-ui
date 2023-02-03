@@ -4,6 +4,7 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useEffect, useRef } from "react";
 import moment from "moment";
 import Lottie from "react-lottie";
+import { useForm } from 'antd/lib/form/Form';
 import typingGif from "../Assets/typing.json";
 
 import { lastChart, sameChart } from "./chatFunc";
@@ -22,6 +23,7 @@ const RightSideChat = ({ messages, handleSubmit, typings, isTyping }) => {
   // console.log("selectChat", selectChat.selectChat._id)
 
   const chatBodyRef = useRef();
+  const form = useForm();
 
   useEffect(() => {
     scrollToBottom();
