@@ -37,7 +37,7 @@ const Login = () => {
         headers: { "content-type": "application/json" },
       };
       const { data } = await axios.post(
-        "http://localhost:1000/api/user/login",
+        "https://web-production-55eb.up.railway.app/api/user/login",
         values,
         config
       );

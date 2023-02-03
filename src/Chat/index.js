@@ -8,7 +8,7 @@ import RightSideChat from "./RightSideChat";
 import io from "socket.io-client";
 import Toast from "../Component/Toast";
 
-const ENDPOINT = "https://mern-chat-app-new.heroku.com/";
+const ENDPOINT = "https://web-production-55eb.up.railway.app/";
 var socket, selectChatCompare;
 
 const Chat = () => {
@@ -53,7 +53,7 @@ const Chat = () => {
       },
     };
     const data = await axios.get(
-      `http://localhost:1000/api/user?search=${searchData}`,
+      `https://web-production-55eb.up.railway.app/api/user?search=${searchData}`,
       config
     );
     console.log("searchdatas", data.data);
@@ -70,7 +70,7 @@ const Chat = () => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:1000/api/chat",
+      "https://web-production-55eb.up.railway.app/api/chat",
       { userId },
       config
     );
@@ -86,7 +86,10 @@ const Chat = () => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const { data } = await axios.get("http://localhost:1000/api/chat", config);
+    const { data } = await axios.get(
+      "https://web-production-55eb.up.railway.app/api/chat",
+      config
+    );
     console.log("getting data", data);
     setListingData(data);
   };
@@ -117,7 +120,7 @@ const Chat = () => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:1000/api/message/${selectChat._id}`,
+        `https://web-production-55eb.up.railway.app/api/message/${selectChat._id}`,
         config
       );
       setMessages(data);
@@ -142,7 +145,7 @@ const Chat = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:1000/api/message",
+        "https://web-production-55eb.up.railway.app/api/message",
         values,
         config
       );
