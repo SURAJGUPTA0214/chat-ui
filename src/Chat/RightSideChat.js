@@ -42,7 +42,7 @@ const RightSideChat = ({ messages, handleSubmit, typings, isTyping }) => {
   const onFinish = async (values) => {
     console.log("values", values);
     handleSubmit(values);
-    form.resetFields()
+//     form.resetFields()
   };
 
   let senderId = JSON.parse(localStorage.getItem("userInfo"));
